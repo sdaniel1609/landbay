@@ -1,0 +1,18 @@
+.landbay-logo{
+  max-width: 10%;
+  margin-left: 3.5rem;
+}
+/*Mobile*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .landbay-logo{
+    max-width: 20%;
+    margin-left: 1.5rem;
+  }
+}
+/*Tablet*/
+@media only screen and(device-width: 768px){
+  .landbay-logo{
+    max-width: 20%;
+    margin-left: 2rem;
+  }
+}

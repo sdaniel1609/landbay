@@ -1,0 +1,70 @@
+<div class="card">
+  <form class="form" [formGroup]="loginForm" (submit)="login()">
+    <div class="wrapper">
+        <div class="form__icon">
+          <img src="assets/mail_icon.svg">
+        </div>
+        <label for="email" class="form__label">Email:</label>
+        <input formControlName="email"  type="text" class="form__input" id="email" placeholder="email@example.com">
+    </div>
+    <div class="form__error" *ngIf="loginForm.controls.email.errors?.required && submitAttempted ">
+      <span>Email is required</span>
+    </div>
+    <div class="form__error" *ngIf="loginForm.controls.email.errors?.email && submitAttempted">
+      <span>Please enter a valid email address</span>
+    </div>
+    <div class="wrapper ml-5">
+      <label for="confirmEmail" class="form__label confirm-email">Confirm Email:</label>
+      <input formControlName="confirmEmail"  type="text" class="form__input" id="confirmEmail" placeholder="email@example.com">
+    </div>
+    <div class="form__error" *ngIf="loginForm.errors?.emailMismatch && submitAttempted">
+      <span>Emails don't match</span>
+    </div>
+    <div class="wrapper">
+      <div class="form__icon">
+        <img src="assets/padlock_icon.svg">
+      </div>
+      <label for="password" class="form__label">Password:</label>
+      <input formControlName="password"  type="password" class="form__input" id="password" placeholder="*******">
+    </div>
+    <div class="form__error" *ngIf="loginForm.controls.password.errors?.required && submitAttempted ">
+      <span>Please enter your password</span>
+    </div>
+    <div class="form__error" *ngIf="loginForm.controls.password.errors?.pattern && submitAttempted ">
+      <span>Password must be at least 10 characters long, and include lower case letter, upper case letter, special character and a number</span>
+    </div>
+    <div class="wrapper">
+      <div class="form__icon">
+        <img src="assets/padlock_icon.svg">
+      </div>
+      <label class="form__label">Pin:</label>
+      <input formControlName="pin" maxlength="1"  class="form__input&#45;&#45;pin"  type="password" placeholder="*">
+      <input maxlength="1"  class="form__input&#45;&#45;pin"  type="password" placeholder="*">
+      <input maxlength="1"  class="form__input&#45;&#45;pin"  type="password" placeholder="*">
+      <input maxlength="1"  class="form__input&#45;&#45;pin"  type="password" placeholder="*">
+      <input maxlength="1"  class="form__input&#45;&#45;pin"  type="password" placeholder="*">
+    </div>
+    <div class="form__error" *ngIf="loginForm.controls.pin.errors?.required && submitAttempted ">
+      <span>Please enter your pin</span>
+    </div>
+    <div class="form__confirmation">
+      <div class="wrapper">
+        <input class="form__confirmation__input" type="checkbox" formControlName="receiveNewsAndOffers" id="receiveNewsAndOffers" />
+        <label class="form__confirmation__label" for="receiveNewsAndOffers">
+          I am happy to receive news and special offers from Landbay from time to time.
+        </label>
+      </div>
+      <div class="wrapper">
+        <input class="form__confirmation__input" type="checkbox" formControlName="acceptTerms" id="acceptTerms" />
+        <label class="form__confirmation__label" for="acceptTerms">
+          Before you can proceed you must read and accept our Terms & Conditions and confirm that you understand that this is an investment account and not a saving account. Your capital is at risk.           </label>
+      </div>
+      <div class="form__error" *ngIf="loginForm.controls.acceptTerms.value === false && submitAttempted ">
+        <span>Please agree to the Terms & conditions if you want to proceed</span>
+      </div>
+    </div>
+    <div class="form__continue">
+        <button type="button" class="btn btn-danger" (click)="login()">Continue</button>
+    </div>
+  </form>
+</div>

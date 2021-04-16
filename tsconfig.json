@@ -11,6 +11,12 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
+    "paths": {
+      "shared": [
+        "dist/shared/shared",
+        "dist/shared"
+      ]
+    },
     "module": "es2020",
     "lib": [
       "es2018",

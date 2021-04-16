@@ -1,0 +1,27 @@
+.investment-benefit{
+  &__img{
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+  &__header{
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  &__icon{
+    padding: 1rem;
+  }
+}
+.main-header{
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+}
+
+/*mobile*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .main-header{
+    font-size: 1.5rem;
+  }
+  .investment-benefit__header{
+    font-size: 0.7rem;
+  }
+}

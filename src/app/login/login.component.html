@@ -1,0 +1,14 @@
+<toolbar></toolbar>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <investment-returns></investment-returns>
+    </div>
+    <div class="col-lg-6 col-sm-12 account-details">
+      <account-details (loginEvent)="login($event)"></account-details>
+    </div>
+  </div>
+</div>
+<ng-template #loginStatusTemplate>
+  <login-status-modal [message]="loginStatusMessage"></login-status-modal>
+</ng-template>
